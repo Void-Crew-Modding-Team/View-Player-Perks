@@ -2,9 +2,8 @@
   <PropertyGroup>
     <TargetFramework>net472</TargetFramework>
     <AssemblyName>ViewPlayerPerks</AssemblyName>
-    <Description>
-    </Description>
-    <Version>1.0.0</Version>
+    <Description>Allows players to see other players perk trees. Client Side.</Description>
+    <Version>1.0.1</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>latest</LangVersion>
     <RestoreAdditionalProjectSources>
@@ -13,8 +12,7 @@
       https://nuget.samboy.dev/v3/index.json
     </RestoreAdditionalProjectSources>
     <RootNamespace>ViewPlayerPerks</RootNamespace>
-    <AssemblyTitle>
-    </AssemblyTitle>
+    <AssemblyTitle>Allows players to see other players perk trees. Client Side.</AssemblyTitle>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DebugType>embedded</DebugType>

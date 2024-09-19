@@ -1,4 +1,3 @@
-﻿using CG.Game;
 using ExitGames.Client.Photon;
 using Gameplay.Perks;
 using Photon.Realtime;
@@ -9,7 +8,6 @@ using System.Linq;
 using UI.Token;
 using UnityEngine;
 using VoidManager.CustomGUI;
-using VoidManager.Utilities;
 
 namespace ViewPlayerPerks
 {
@@ -35,6 +33,7 @@ namespace ViewPlayerPerks
             activePerks.Insert(2, Engineer); activePerks.Insert(3, Scavenger);
             buffLevels = GetPerkBuffLevels(selectedPlayer.CustomProperties);
         }
+        
         public override void Draw(Player selectedPlayer)
         {
             _cachedSkin = GUISkin.Instantiate(GUI.skin);
@@ -48,6 +47,7 @@ namespace ViewPlayerPerks
                         GUILayout.Label($"Player Level: {PlayerLevel}");
                         if (GUILayout.Button("Refresh")) Refresh(selectedPlayer);
                     }
+
                     using (new GUILayout.HorizontalScope())
                     {
                         spentPerks = 0;
@@ -86,6 +86,7 @@ namespace ViewPlayerPerks
                 }
             }
         }
+        
         public List<PerkRef> GetActivePerks(Hashtable hashtable)
         {
             List<PerkRef> perks = new List<PerkRef>();
