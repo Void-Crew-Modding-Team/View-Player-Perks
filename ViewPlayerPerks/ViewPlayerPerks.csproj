@@ -35,6 +35,7 @@
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>E:\Program Files\Steam\steamapps\common\Void Crew\Void Crew_Data\Managed\Newtonsoft.Json.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Photon3Unity3D">
       <HintPath>E:\Program Files\Steam\steamapps\common\Void Crew\Void Crew_Data\Managed\Photon3Unity3D.dll</HintPath>
