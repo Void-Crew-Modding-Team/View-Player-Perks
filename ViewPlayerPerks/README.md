@@ -4,7 +4,7 @@
 
 # View Player Perks
 
-Version 1.0.1  
+Version 1.0.2  
 For Game Version 0.27.0  
 Developed by Mest  
 Requires VoidManager 1.2.0
@@ -18,20 +18,15 @@ Requires VoidManager 1.2.0
 
 ### 🎮 Client Usage
 
-- 
+- Open the `VoidManager` `PlayerList` Menu.
+- Select a player from the list and view their perk tree.
+
+- Reopen the menu or re-select the player or select refresh to refresh the menu.
 
 ### 👥 Multiplayer Functionality
 
-
-# Note to mod developer: Remove all but one, and describe any custom functionality.
 - ✅ Client
   - Only the client needs this mod.
-- ✅ Host
-  - Only the host needs this mod.
-- ✅ Session
-  - Requires the room to be marked as Mod_Session.
-- ✅ All
-  - All players must have this mod installed.
 
 ---------------------
 
