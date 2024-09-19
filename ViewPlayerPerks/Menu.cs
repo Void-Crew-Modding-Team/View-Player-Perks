@@ -1,11 +1,10 @@
-﻿using CG.Game;
+﻿using ExitGames.Client.Photon;
 using Gameplay.Perks;
 using Photon.Realtime;
 using ResourceAssets;
 using System.Collections.Generic;
 using UnityEngine;
 using VoidManager.CustomGUI;
-using VoidManager.Utilities;
 
 namespace ViewPlayerPerks
 {
@@ -21,15 +20,13 @@ namespace ViewPlayerPerks
             {
                 using (new GUILayout.VerticalScope())
                 {
-                    CG.Game.Player.Player player = ClientGame.Current.GetPlayerCharacterByActorNumber(selectedPlayer.ActorNumber);
                     using (new GUILayout.HorizontalScope())
                     {
                         object obj;
                         if (selectedPlayer.CustomProperties.TryGetValue("RP_PR", out obj)) GUILayout.Label($"Perk Points: {((int)obj + 1) - spentPerks}");
                         if (selectedPlayer.CustomProperties.TryGetValue("RP_FR", out obj)) GUILayout.Label($"Player Level: {(int)obj}");
                     }
-                    List<PerkRef> activePerks = new List<PerkRef>();
-                    activePerks.AddRange(player.gameObject.GetComponent<PlayerPerkLoader>().ActivePerks);
+                    List<PerkRef> activePerks = [.. GetActivePerks(selectedPlayer.CustomProperties)];
                     PerkRef Engineer = activePerks[0]; PerkRef Scavenger = activePerks[3];
                     activePerks.RemoveAt(3); activePerks.RemoveAt(0);
                     activePerks.Insert(2, Engineer); activePerks.Insert(3, Scavenger);
@@ -66,6 +63,21 @@ namespace ViewPlayerPerks
                     }
                 }
             }
+        }
+        public List<PerkRef> GetActivePerks(Hashtable hashtable)
+        {
+            List<PerkRef> perks = new List<PerkRef>();
+
+            object obj;
+            if (!hashtable.TryGetValue("OCP", out obj) && !hashtable.TryGetValue("ACP", out obj))
+                return perks;
+
+            int[] array = (int[])obj;
+            for (int i = 0; i < array.Length; i += 4)
+            {
+                perks.Add(new PerkRef(new int[] { array[i], array[i + 1], array[i + 2], array[i + 3] }));
+            }
+            return perks;
         }
     }
 }

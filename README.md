@@ -4,17 +4,17 @@
 
 # ViewPlayerPerks
 
-Version 1.0.0  
+Version 1.0.1  
 For Game Version 0.27.0  
 Developed by Mest  
-Requires VoidManager 1.1.8
+Requires VoidManager 1.1.9
 
 
 ---------------------
 
 ### 💡 Function(s)
 
-- 
+- Allows players to see other players perk trees. Client Side.
 
 ### 🎮 Client Usage
 
