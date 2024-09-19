@@ -3,6 +3,7 @@ using Gameplay.Perks;
 using Photon.Realtime;
 using ResourceAssets;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using VoidManager.CustomGUI;
 using VoidManager.Utilities;
@@ -33,6 +34,7 @@ namespace ViewPlayerPerks
                     PerkRef Engineer = activePerks[0]; PerkRef Scavenger = activePerks[3];
                     activePerks.RemoveAt(3); activePerks.RemoveAt(0);
                     activePerks.Insert(2, Engineer); activePerks.Insert(3, Scavenger);
+                    Dictionary<GUIDUnion, int> buffLevels = player.gameObject.GetComponent<PlayerPerkLoader>().PerkBuffLevels;
                     using (new GUILayout.HorizontalScope())
                     {
                         spentPerks = 0;
@@ -47,10 +49,11 @@ namespace ViewPlayerPerks
                                 foreach (PerkBuffRef perkBuffRef in perkref.Asset.Buffs)
                                 {
                                     PerkBuff asset = perkBuffRef.Asset;
-                                    if (asset != null)
+                                    if (asset != null && asset.DisplayName != "Coming Soon!")
                                     {
-                                        int buffLevel = asset.GetBuffLevel();
-                                        if (asset.DisplayName != "Coming Soon!" && buffLevel > 0)
+                                        int buffLevel = 0;
+                                        buffLevel = buffLevels[asset.ContainerGuid];
+                                        if (buffLevel > 0)
                                         {
                                             using (new GUILayout.HorizontalScope())
                                             {
