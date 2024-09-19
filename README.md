@@ -2,12 +2,12 @@
 ![](https://img.shields.io/badge/Game%20Version-0.27.0-111111?style=flat&labelColor=24292f&color=111111)
 [![](https://img.shields.io/discord/1180651062550593536.svg?&logo=discord&logoColor=ffffff&style=flat&label=Discord&labelColor=24292f&color=111111)](https://discord.gg/g2u5wpbMGu "Void Crew Modding Discord")
 
-# ViewPlayerPerks
+# View Player Perks
 
 Version 1.0.1  
 For Game Version 0.27.0  
 Developed by Mest  
-Requires VoidManager 1.1.9
+Requires VoidManager 1.2.0
 
 
 ---------------------
